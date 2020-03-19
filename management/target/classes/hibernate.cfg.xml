@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+  
+<hibernate-configuration>
+    <session-factory>
+  
+        <!-- Connection settings -->
+        <property name="hibernate.connection.driver_class">org.postgresql.Driver</property>
+        <property name="hibernate.connection.url">jdbc:postgresql://localhost:5432/Management</property>
+        <property name="hibernate.connection.username">postgres</property>
+        <property name="hibernate.connection.password">changeme</property>
+  
+        <!-- SQL dialect -->
+        <property name="hibernate.dialect">org.hibernate.dialect.PostgreSQLDialect</property>
+  
+        <!-- Print executed SQL to stdout -->
+        <property name="show_sql">true</property>  
+        <property name="hibernate.temp.use_jdbc_metadata_defaults">false</property>
+        <property name="current_session_context_class">thread</property>
+      <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->  
+      <property name="hibernate.hbm2ddl.auto">create</property>
+        <!-- Annotated entity classes -->
+        <mapping class="com.group8.management.entities.SaleOrder"/>
+        <mapping class="com.group8.management.entities.ProductDetail"/>
+        <mapping class="com.group8.management.entities.Product"/>
+        <mapping class="com.group8.management.entities.ImportOrder"/>
+        <mapping class="com.group8.management.entities.Site"/>
+        <mapping class="com.group8.management.entities.SiteProduct"/>
+        <mapping class="com.group8.management.entities.Transportation"/>
+        <mapping class="com.group8.management.entities.User"/>
+        
+         
+    </session-factory>
+</hibernate-configuration>
